@@ -6,6 +6,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -24,10 +25,19 @@ public class IssueController {
     @Autowired
     IssueRepository repository;
 
+    @GetMapping("/issues")
+    public String getAllIssues(Model model) {
+        //model.addAttribute("user", repository.findById(id));
+        model.addAttribute("name", "DOGs");
+        return "issues";
+    }
+
     @RequestMapping("/issues/{id}")
     public String issue(@PathVariable Long id, Model model) {
         //model.addAttribute("user", repository.findById(id));
         model.addAttribute("name", "FRED");
         return "issues";
     }
+
+
 }
