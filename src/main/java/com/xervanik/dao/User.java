@@ -1,9 +1,6 @@
 package com.xervanik.dao;
 
 import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 
 /**
  * <h1>User</h1>
@@ -15,10 +12,8 @@ import javax.persistence.GenerationType;
  * @since   2018-10-12
  */
 @Entity
-public class User {
-    @Id
-    @GeneratedValue(strategy=GenerationType.AUTO)
-    private long id;
+public class User extends Base{
+
     private String firstName;
     private String lastName;
     private String email;
