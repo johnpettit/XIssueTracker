@@ -26,8 +26,9 @@ public class UserController {
 
     @RequestMapping("/users/{id}")
     public String developer(@PathVariable Long id, Model model) {
-        model.addAttribute("user", repository.findById(id));
-        return "user";
+        //model.addAttribute("user", repository.findById(id));
+        model.addAttribute("name", "FRED");
+        return "users";
     }
 
     @RequestMapping(value="/users",method=RequestMethod.GET)
