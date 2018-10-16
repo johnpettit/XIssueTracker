@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>XIssueTracker : Add Issue</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<h2>X Issue Tracker : Add Issue</h2>
+<form action="#" th:action="@{/addissue}" th:object="${issue}"
+      method="post">
+    <table border="1">
+        <tr>
+            <td><label th:text="#{msg.title}" /></td>
+            <td><input type="text" th:field="*{title}" /></td>
+        </tr>
+        <tr>
+            <td><label th:text="#{msg.description}" /></td>
+            <td><input type="text" th:field="*{description}" /></td>
+        </tr>
+        <tr>
+            <td><label th:text="#{msg.createDate}" /></td>
+            <td><input type="text" th:field="*{createDate}" /></td>
+        </tr>
+        <tr>
+            <td><input type="submit" value="Submit" /></td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>

@@ -19,7 +19,7 @@ public class Issue extends Base {
 
     @Id
     @GeneratedValue
-    private Long id;
+    private long id;
     private String title;
     private String description;
     private Date createDate;
@@ -30,11 +30,11 @@ public class Issue extends Base {
         super();
     }
 
-    public Long getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(long id) {
         this.id = id;
     }
 

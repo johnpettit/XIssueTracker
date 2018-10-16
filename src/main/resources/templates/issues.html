@@ -5,6 +5,30 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
 <body>
-<p th:text="'Hello, ' + ${name} + '!'" />
+<h1>X Issue Tracker : Issue List</h1>
+<table border="1">
+    <thead>
+    <tr>
+        <th><b>ID</b></th>
+        <th><b>Title</b></th>
+        <th><b>Description</b></th>
+        <th><b>Create Date</b></th>
+
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="issue : ${issues}">
+        <td th:text="${issue.id}" />
+        <td th:text="${issue.title}" />
+        <td th:text="${issue.description}"</td>
+        <td th:text="${issue.createDate}" />
+    </tr>
+    </tbody>
+</table>
+<div>
+    <p>
+        <a th:href="@{/}" th:text="Home" />
+    </p>
+</div>
 </body>
 </html>
