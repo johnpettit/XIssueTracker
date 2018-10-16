@@ -18,7 +18,7 @@ public class User extends Base{
 
     @Id
     @GeneratedValue
-    private Long id;
+    private long id;
     private String firstName;
     private String lastName;
     private String email;
@@ -60,11 +60,11 @@ public class User extends Base{
         this.email = email;
     }
 
-    public Long getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(long id) {
         this.id = id;
     }
 }

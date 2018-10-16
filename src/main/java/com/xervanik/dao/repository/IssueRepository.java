@@ -14,9 +14,9 @@ import org.springframework.data.repository.CrudRepository;
  */
 public interface IssueRepository extends CrudRepository<Issue, Long> {
 
-    List<Issue> findByTitle(String title);
-
     List<Issue> findAll();
+
+    Issue findById(long id);
 
     Issue save(Issue issue);
 }
