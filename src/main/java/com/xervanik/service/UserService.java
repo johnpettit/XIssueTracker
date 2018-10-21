@@ -1,6 +1,5 @@
 package com.xervanik.service;
 
-import com.xervanik.dao.Issue;
 import com.xervanik.dao.repository.UserRepository;
 import com.xervanik.dao.User;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,7 +31,6 @@ public class UserService {
     public User getById(long id) {
         return userRepo.findById(id);
     }
-
 
     public User addNew(User user) {
         return userRepo.save(user);

@@ -3,6 +3,7 @@ package com.xervanik.dao;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.Column;
 
 /**
  * <h1>User</h1>
@@ -21,7 +22,12 @@ public class User extends Base{
     private long id;
     private String firstName;
     private String lastName;
+    @Column(nullable = false, unique = true)
     private String email;
+
+
+
+    private String password;
 
 /*    @ManyToMany
     private List<Skill> skills;*/
@@ -66,5 +72,13 @@ public class User extends Base{
 
     public void setId(long id) {
         this.id = id;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 }

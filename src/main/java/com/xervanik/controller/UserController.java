@@ -27,8 +27,9 @@ public class UserController {
     UserService userService;
 
     @RequestMapping(value="/users",method=RequestMethod.GET)
-    public String developersList(Model model) {
-        model.addAttribute("name", "users");
+    public String userList(Model model) {
+        List<User> users = userService.getAll();
+        model.addAttribute("users", users);
         return "users.html";
     }
 
