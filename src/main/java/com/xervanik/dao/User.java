@@ -24,13 +24,10 @@ public class User extends Base{
     private String lastName;
     @Column(nullable = false, unique = true)
     private String email;
-
-
-
     private String password;
 
 /*    @ManyToMany
-    private List<Skill> skills;*/
+    private List<Issue> issues;*/
 
     public User() {
         super();
