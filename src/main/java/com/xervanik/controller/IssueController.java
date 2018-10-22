@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import com.xervanik.dao.Issue;
 import com.xervanik.service.IssueService;
 import java.util.List;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * <h1>IssueController</h1>
@@ -20,6 +22,8 @@ import java.util.List;
  */
 @Controller
 public class IssueController {
+
+    Logger logger = LoggerFactory.getLogger(HomeController.class);
 
     @Autowired
     IssueService issueService;
@@ -41,6 +45,8 @@ public class IssueController {
     public String saveStudent(@ModelAttribute Issue issue, Model model) {
 
         issueService.addNew(issue);
+
+        logger.info("Adding new Issue:" + issue.getTitle());
 
         List<Issue> issues = issueService.getAll();
         model.addAttribute("issues", issues);

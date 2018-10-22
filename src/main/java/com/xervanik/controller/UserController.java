@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.beans.factory.annotation.Autowired;
 import java.util.List;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * <h1>UserController</h1>
@@ -22,6 +24,8 @@ import java.util.List;
  */
 @Controller
 public class UserController {
+
+    Logger logger = LoggerFactory.getLogger(HomeController.class);
 
     @Autowired
     UserService userService;
@@ -43,6 +47,8 @@ public class UserController {
     public String saveStudent(@ModelAttribute User user, Model model) {
 
         userService.addNew(user);
+
+        logger.info("Added new user:" + user.getEmail());
 
         List<User> users = userService.getAll();
         model.addAttribute("users", users);
