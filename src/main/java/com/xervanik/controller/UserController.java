@@ -2,6 +2,8 @@ package com.xervanik.controller;
 
 import com.xervanik.dao.User;
 import com.xervanik.service.UserService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -23,6 +25,8 @@ import java.util.List;
 @Controller
 public class UserController {
 
+    Logger logger = LoggerFactory.getLogger(UserController.class);
+
     @Autowired
     UserService userService;
 
@@ -43,6 +47,8 @@ public class UserController {
     public String saveStudent(@ModelAttribute User user, Model model) {
 
         userService.addNew(user);
+
+        logger.info(user.getEmail());
 
         List<User> users = userService.getAll();
         model.addAttribute("users", users);
