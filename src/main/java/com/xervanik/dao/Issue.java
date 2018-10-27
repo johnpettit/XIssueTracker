@@ -23,8 +23,7 @@ public class Issue extends Base {
     private String title;
     private String description;
     private Date createDate;
-    @OneToOne
-    private User ownerId;
+    private long ownerId;
 
     public Issue() {
         super();
@@ -62,11 +61,11 @@ public class Issue extends Base {
         this.createDate = createDate;
     }
 
-    public User getOwnerId() {
+    public long getOwnerId() {
         return ownerId;
     }
 
-    public void setOwnerId(User ownerId) {
+    public void setOwnerId(long ownerId) {
         this.ownerId = ownerId;
     }
 }

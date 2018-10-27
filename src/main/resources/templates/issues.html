@@ -13,7 +13,7 @@
         <th><b>Title</b></th>
         <th><b>Description</b></th>
         <th><b>Create Date</b></th>
-
+        <th><b>Owner Id</b></th>
     </tr>
     </thead>
     <tbody>
@@ -21,7 +21,8 @@
         <td th:text="${issue.id}" />
         <td th:text="${issue.title}" />
         <td th:text="${issue.description}"</td>
-        <td th:text="${issue.createDate}" />
+        <td th:text="${issue.createDate}"</td>
+        <td th:text="${issue.ownerId}" />
     </tr>
     </tbody>
 </table>

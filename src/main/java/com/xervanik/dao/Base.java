@@ -13,7 +13,6 @@ import javax.persistence.GenerationType;
  * @version 1.0
  * @since   2018-10-12
  */
-@Entity
 public class Base {
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)

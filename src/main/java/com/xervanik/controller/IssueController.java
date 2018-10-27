@@ -52,23 +52,10 @@ public class IssueController {
     @RequestMapping(value = "/addissue", method = RequestMethod.POST)
     public String saveStudent(@ModelAttribute Issue issue, Model model) {
 
-        //issue.getOwnerId().setEmail("test@test.com");
-
-        User user = new User();
-        user.setEmail("blah@blah.com");
-        user.setFirstName("John");
-        user.setLastName("Pettit");
-        user.setPassword("chuck111");
-        userService.addNew(user);
-
-        issue.setOwnerId(user);
+        issue.setOwnerId(1L);
         issueService.addNew(issue);
 
-        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-
-        //UserDetails user = ((UserDetails)authentication.getPrincipal());
-
-        //logger.info(user.getUsername());
+        logger.info(issue.getTitle());
 
         List<Issue> issues = issueService.getAll();
         model.addAttribute("issues", issues);

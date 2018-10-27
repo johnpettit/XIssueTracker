@@ -32,7 +32,6 @@ public class IssueService {
         return issueRepo.findById(id);
     }
 
-
     public Issue addNew(Issue issue) {
         return issueRepo.save(issue);
     }
